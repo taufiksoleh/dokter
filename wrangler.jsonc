@@ -1,0 +1,14 @@
+// Konfigurasi deploy ke Cloudflare untuk Paket Profil dan etalase.
+// Website ini berupa file statis di folder out/, jadi tidak memakai adapter server (OpenNext).
+// Tanpa file ini, `wrangler deploy` mengira proyek ini aplikasi Next.js dengan server lalu gagal.
+{
+  "name": "dokter",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    // Alamat halaman berakhiran garis miring, sama seperti hasil build (trailingSlash).
+    "html_handling": "auto-trailing-slash",
+    // Alamat yang tidak ada menampilkan out/404.html.
+    "not_found_handling": "404-page"
+  }
+}

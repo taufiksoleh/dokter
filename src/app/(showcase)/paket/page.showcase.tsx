@@ -18,7 +18,6 @@ import {
   subscriptionFaqs,
   subscriptionTerms,
   terms,
-  UPGRADE_PRICE,
 } from '@/showcase/pricing'
 import { PlanCard } from '@/showcase/PlanCard'
 import { vendor } from '@/showcase/vendor'
@@ -98,8 +97,7 @@ export default function PricingPage() {
           <p className="eyebrow">Paket</p>
           <h2 className={styles.sectionTitle}>Pilihan paket</h2>
           <p className={styles.sectionLede}>
-            Biaya dibayar satu kali dan kode sumber diserahkan kepada Anda. Domain dan hosting tahun
-            pertama sudah termasuk.
+            Biaya dibayar satu kali. Domain dan hosting tahun pertama sudah termasuk.
           </p>
           <div className={styles.planGrid}>
             {plans.map((plan) => (
@@ -196,9 +194,7 @@ export default function PricingPage() {
           Perawatan dan layanan tambahan
         </h2>
         <p className={styles.sectionLede}>
-          Biaya perawatan tahunan baru berlaku mulai tahun kedua. Pindah dari Paket Profil ke Paket
-          Mandiri dalam 12 bulan pertama cukup membayar selisihnya, yaitu{' '}
-          {formatRupiah(UPGRADE_PRICE)}.
+          Biaya perawatan tahunan baru berlaku mulai tahun kedua.
         </p>
         <div className={styles.tableWrap}>
           <table className={styles.table}>
@@ -220,24 +216,15 @@ export default function PricingPage() {
             </tbody>
           </table>
         </div>
-        <div className={styles.tableWrap}>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th scope="col">Layanan tambahan</th>
-                <th scope="col">Biaya</th>
-              </tr>
-            </thead>
-            <tbody>
-              {addOns.map((item) => (
-                <tr key={item.name}>
-                  <th scope="row">{item.name}</th>
-                  <td>{item.price}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <h3 className={styles.subTitle}>Layanan tambahan</h3>
+        <p className={styles.sectionLede}>
+          Dapat ditambahkan sesuai kebutuhan. Biayanya kami sampaikan saat konsultasi.
+        </p>
+        <ul className={styles.terms}>
+          {addOns.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </section>
 
       <section className="container section" aria-labelledby="cara-kerja">

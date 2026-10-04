@@ -12,6 +12,7 @@ export type Plan = {
 /** Paket berlangganan disembunyikan untuk sementara. Ubah ke true untuk menampilkannya lagi. */
 export const SHOW_SUBSCRIPTION: boolean = false
 export const SUBSCRIPTION_MIN_MONTHS = 12
+/** Biaya pindah dari Paket Profil ke Paket Mandiri. Tidak ditampilkan di website. */
 export const UPGRADE_PRICE = 7_000_000
 
 export const plans: Plan[] = [
@@ -27,7 +28,7 @@ export const plans: Plan[] = [
         'Sampai 6 halaman prosedur',
         '3 artikel dipasang di awal',
         'Domain dan hosting tahun pertama',
-        '3 kali update konten di tahun pertama',
+        'Layanan pemasangan update konten',
         'Garansi perbaikan bug 30 hari',
       ],
     },
@@ -76,29 +77,25 @@ export const maintenance = [
   {
     plan: 'Paket Profil',
     yearly: 2_400_000,
-    includes:
-      'Perpanjangan domain, hosting, SSL, pemantauan, dan 6 kali update konten dalam setahun',
+    includes: 'Perpanjangan domain, hosting, SSL, pemantauan, dan pemasangan update konten',
   },
   {
     plan: 'Paket Mandiri',
     yearly: 4_800_000,
     includes:
-      'Perpanjangan domain, server, backup harian, pembaruan keamanan, perbaikan bug, dan perubahan kecil hingga 1 jam kerja per bulan',
+      'Perpanjangan domain, server, backup harian, pembaruan keamanan, perbaikan bug, dan perubahan kecil',
   },
 ]
 
+/** Harga tiap layanan tambahan disampaikan saat konsultasi, tidak ditampilkan di website. */
 export const addOns = [
-  { name: 'Update konten di luar kuota (Paket Profil)', price: 'Rp 150.000 per update' },
-  { name: 'Halaman prosedur tambahan (Paket Profil)', price: 'Rp 250.000 per halaman' },
-  {
-    name: 'Penulisan artikel 1.000-1.200 kata',
-    price: 'Rp 350.000 per artikel, atau Rp 1.200.000 untuk 4 artikel',
-  },
-  { name: 'Unggahan Instagram tampil otomatis', price: 'Rp 1.000.000' },
-  { name: 'Versi bahasa Inggris, di luar biaya penerjemahan', price: 'Rp 2.500.000' },
-  { name: 'Meta Pixel dan pelacakan iklan', price: 'Rp 750.000' },
-  { name: 'Form konsultasi tersimpan dan notifikasi email (Paket Mandiri)', price: 'Rp 1.500.000' },
-  { name: 'Pekerjaan lain di luar paket', price: 'Rp 300.000 per jam' },
+  'Pemasangan update konten tambahan',
+  'Halaman prosedur tambahan',
+  'Penulisan artikel',
+  'Unggahan Instagram tampil otomatis',
+  'Versi bahasa Inggris',
+  'Meta Pixel dan pelacakan iklan',
+  'Form konsultasi tersimpan dengan notifikasi email',
 ]
 
 export const features = [
@@ -136,7 +133,7 @@ export const features = [
 export const steps = [
   {
     title: 'Pilih paket',
-    description: 'Hubungi kami lewat WhatsApp, lalu kontrak dan pembayaran pertama diselesaikan.',
+    description: 'Hubungi kami lewat WhatsApp untuk membicarakan kebutuhan dan menyepakati paket.',
   },
   {
     title: 'Kirim materi',
@@ -144,7 +141,7 @@ export const steps = [
   },
   {
     title: 'Tinjau tampilan',
-    description: 'Kami memasang materi ke template. Anda meninjau dan meminta satu kali revisi.',
+    description: 'Kami memasang materi ke template, lalu Anda meninjaunya.',
   },
   {
     title: 'Website online',
@@ -155,7 +152,6 @@ export const steps = [
 export const terms = [
   'Desain mengikuti template seperti website contoh. Warna, foto, dan teks disesuaikan, sedangkan tata letak tidak diubah. Tidak ada pengerjaan desain custom.',
   'Materi dipasang sesuai naskah yang Anda berikan. Penyuntingan bahasa dan penulisan artikel tersedia sebagai layanan tambahan.',
-  'Revisi satu kali pada tahap tampilan dan satu kali pada tahap uji coba.',
 ]
 
 export const faqs = [
@@ -172,7 +168,7 @@ export const faqs = [
   {
     question: 'Bisakah mulai dari Paket Profil lalu pindah ke Paket Mandiri?',
     answer:
-      'Bisa. Dalam 12 bulan pertama Anda cukup membayar selisihnya. Tampilan dan alamat halaman tidak berubah.',
+      'Bisa. Tampilan dan alamat halaman tidak berubah, dan konten yang sudah ada ikut dipindahkan.',
   },
   {
     question: 'Apakah domain didaftarkan atas nama saya?',

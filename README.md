@@ -82,20 +82,32 @@ npm run test:cms:browser    # alur panel admin pada build produksi
 
 Keduanya memakai database sementara, sehingga `data/` dan `media/` tidak tersentuh. `test:cms:browser` membangun ulang folder `.next-cms/`, jadi jalankan `npm run build:cms` lagi sesudahnya bila folder itu dipakai untuk produksi.
 
-## Publikasi ke Cloudflare Pages
+## Publikasi ke Cloudflare
 
-Berlaku untuk Paket Profil dan etalase, karena keduanya berupa file statis.
+Berlaku untuk Paket Profil dan etalase, karena keduanya berupa file statis di folder `out/`.
 
-```sh
-npm run check:publish   # menolak bila masih ada nomor WhatsApp contoh atau alamat localhost
-npm run build
-```
+Repo ini terhubung ke Cloudflare Workers Builds. Setiap push ke `main` menjalankan `npm run build`, lalu `npx wrangler deploy`. File `wrangler.jsonc` memberi tahu Wrangler bahwa yang diunggah adalah folder `out/` sebagai file statis. Jangan hapus file itu: tanpa file tersebut Wrangler menganggap proyek ini aplikasi Next.js dengan server, mencoba memasang adapter OpenNext, lalu gagal.
 
-Lalu unggah folder `out/`, lewat dashboard Cloudflare Pages (Direct Upload) atau `npx wrangler pages deploy out`. Bila proyek dihubungkan ke repo Git, isi perintah build `npm run build`, folder hasil `out`, dan variabel `NEXT_PUBLIC_SITE_URL` serta `NEXT_PUBLIC_SHOWCASE` di pengaturan proyek.
+Pengaturan di dashboard Cloudflare (Settings > Build):
+
+| Pengaturan | Nilai |
+| --- | --- |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+| Build variable `NEXT_PUBLIC_SITE_URL` | Alamat website, diawali `https://` |
+| Build variable `NEXT_PUBLIC_SHOWCASE` | `1` untuk etalase, kosong untuk klien |
 
 `NEXT_PUBLIC_SITE_URL` disisipkan saat build. Bila domain berubah, website harus dibangun ulang.
 
-File `public/_headers` berisi header keamanan dan aturan cache yang dibaca Cloudflare Pages. Gambar pratinjau saat tautan etalase dibagikan ada di `public/og-etalase.png`.
+Sebelum push, periksa secara lokal:
+
+```sh
+npm run check:publish                 # menolak bila masih ada nomor WhatsApp contoh atau alamat localhost
+npm run build
+npx wrangler deploy --dry-run         # memeriksa konfigurasi tanpa mengunggah
+```
+
+File `public/_headers` berisi header keamanan dan aturan cache yang dibaca Cloudflare. Gambar pratinjau saat tautan etalase dibagikan ada di `public/og-etalase.png`.
 
 ## Mode etalase
 
