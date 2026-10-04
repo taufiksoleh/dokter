@@ -156,8 +156,6 @@ export const terms = [
   'Desain mengikuti template seperti website contoh. Warna, foto, dan teks disesuaikan, sedangkan tata letak tidak diubah. Tidak ada pengerjaan desain custom.',
   'Materi dipasang sesuai naskah yang Anda berikan. Penyuntingan bahasa dan penulisan artikel tersedia sebagai layanan tambahan.',
   'Revisi satu kali pada tahap tampilan dan satu kali pada tahap uji coba.',
-  'Pembayaran dibagi dua: 50% saat kontrak dan 50% sebelum website diluncurkan.',
-  'Harga belum termasuk PPN (bila berlaku).',
 ]
 
 export const faqs = [
