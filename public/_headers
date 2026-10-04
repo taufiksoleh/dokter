@@ -1,0 +1,10 @@
+# Dibaca oleh Cloudflare Pages. Berlaku untuk hasil build statis (Paket Profil dan etalase).
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Nama file di folder ini memuat sidik isi, jadi aman disimpan lama di browser.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

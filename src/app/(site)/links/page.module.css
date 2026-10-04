@@ -1,0 +1,33 @@
+.page {
+  display: grid;
+  justify-items: center;
+  max-width: 460px;
+  padding-block: var(--space-8) var(--section);
+  text-align: center;
+}
+
+.avatar {
+  width: 112px;
+  height: 112px;
+  border-radius: var(--radius-pill);
+  background: var(--sand);
+  object-fit: cover;
+  object-position: top;
+}
+
+.name {
+  margin-top: var(--space-5);
+  font-size: var(--text-xl);
+}
+
+.links {
+  display: grid;
+  gap: var(--space-3);
+  width: 100%;
+  margin-top: var(--space-6);
+}
+
+.links :global(.button) {
+  width: 100%;
+  min-height: 56px;
+}

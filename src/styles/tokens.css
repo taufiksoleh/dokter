@@ -1,0 +1,54 @@
+/* Seluruh identitas visual diatur dari sini. Untuk klien baru cukup ganti nilai warna. */
+:root {
+  --paper: #faf8f4;
+  --surface: #ffffff;
+  --sand: #f1ece3;
+  --ink: #12283a;
+  --ink-soft: #55636f;
+  --accent: #0f6e6a;
+  --accent-strong: #0a5552;
+  --accent-tint: #e2efed;
+  --line: #e3ddd3;
+  --whatsapp: #136d4c;
+  --whatsapp-strong: #0e5a3e;
+  --focus: #b9770e;
+
+  --font-display: var(--font-fraunces), Georgia, 'Times New Roman', serif;
+  --font-body: var(--font-jakarta), system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.5rem, 1.25rem + 1vw, 1.875rem);
+  --text-2xl: clamp(1.875rem, 1.4rem + 2.2vw, 2.875rem);
+  --text-3xl: clamp(2.5rem, 1.6rem + 4vw, 4.5rem);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --section: clamp(56px, 8vw, 112px);
+
+  --radius-card: 14px;
+  --radius-control: 8px;
+  --radius-pill: 999px;
+  --shadow-raised: 0 12px 32px rgb(18 40 58 / 0.08);
+
+  /* Tinggi navigasi bawah di ponsel. Nol di layar lebar, tempat navigasi itu tidak tampil. */
+  --bottom-nav-height: 64px;
+
+  --container: 1160px;
+  --gutter: clamp(20px, 5vw, 48px);
+  --measure: 66ch;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --bottom-nav-height: 0px;
+  }
+}

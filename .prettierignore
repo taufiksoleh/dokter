@@ -1,0 +1,8 @@
+.next/
+.next-cms/
+out/
+node_modules/
+package-lock.json
+src/cms/payload-types.ts
+src/cms/migrations/
+src/app/(payload)/admin/importMap.js

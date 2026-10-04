@@ -1,0 +1,40 @@
+.band {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(32px, 6vw, 72px);
+  border-radius: var(--radius-card);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: var(--space-5);
+  justify-items: start;
+  max-width: 34rem;
+}
+
+.copy p {
+  color: rgb(250 248 244 / 0.78);
+}
+
+/* Di layar sempit motif akan menimpa teks, jadi hanya ditampilkan mulai lebar tablet. */
+.spine {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: clamp(24px, 8vw, 112px);
+  width: auto;
+  height: 118%;
+  color: #9fd6cf;
+  opacity: 0.22;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 640px) {
+  .spine {
+    display: block;
+  }
+}

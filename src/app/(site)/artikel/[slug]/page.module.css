@@ -1,0 +1,19 @@
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-5);
+  margin-top: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.cover {
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.cover img {
+  width: 100%;
+  aspect-ratio: 40 / 21;
+  border-radius: var(--radius-card);
+  object-fit: cover;
+}

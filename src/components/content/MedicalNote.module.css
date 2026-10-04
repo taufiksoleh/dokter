@@ -1,0 +1,8 @@
+.note {
+  max-width: var(--measure);
+  padding: var(--space-4) var(--space-5);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-control) var(--radius-control) 0;
+  background: var(--accent-tint);
+  font-size: var(--text-sm);
+}

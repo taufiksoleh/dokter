@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+  margin-bottom: var(--space-7);
+}
+
+.title {
+  margin-top: var(--space-3);
+  max-width: 20ch;
+}
+
+.description {
+  margin-top: var(--space-4);
+  max-width: 56ch;
+  color: var(--ink-soft);
+}

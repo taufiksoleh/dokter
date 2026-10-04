@@ -1,0 +1,74 @@
+.footer {
+  /* Ruang di bawah agar navigasi bawah dan tombol WhatsApp tidak menutupi teks terakhir. */
+  padding-block: var(--space-8)
+    calc(104px + var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--line);
+  background: var(--sand);
+  font-size: var(--text-sm);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.identity {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+}
+
+.heading {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.list a {
+  text-decoration: none;
+}
+
+.list a:hover {
+  text-decoration: underline;
+}
+
+.city {
+  display: block;
+  color: var(--ink-soft);
+}
+
+.bottom {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--line);
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+}
+
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr auto;
+    gap: var(--space-6);
+  }
+}

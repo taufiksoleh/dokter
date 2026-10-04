@@ -1,0 +1,63 @@
+{
+  "name": "website-profil-dokter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "node scripts/preview.mjs",
+    "typecheck": "tsc --project tsconfig.check.json --noEmit --incremental false",
+    "lint": "node scripts/lint.mjs",
+    "format": "prettier --write src scripts tests content",
+    "format:check": "prettier --check src scripts tests content",
+    "test": "tsx --test tests/unit/*.test.ts",
+    "test:browser": "playwright test",
+    "verify": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run build && npm run test:browser",
+    "dev:cms": "payload migrate && CONTENT_SOURCE=cms next dev",
+    "build:cms": "payload migrate && CONTENT_SOURCE=cms next build",
+    "start:cms": "CONTENT_SOURCE=cms next start",
+    "cms:import": "CONTENT_SOURCE=cms tsx scripts/import-content.ts",
+    "cms:types": "payload generate:types",
+    "cms:importmap": "payload generate:importmap",
+    "cms:migrate": "payload migrate",
+    "cms:migrate:create": "payload migrate:create",
+    "test:cms": "CONTENT_SOURCE=cms tsx --test tests/cms/*.test.ts",
+    "test:cms:browser": "playwright test --config playwright.cms.config.ts",
+    "cms:create-admin": "tsx scripts/create-admin.ts",
+    "verify:cms": "npm run test:cms && npm run test:cms:browser",
+    "check:publish": "tsx scripts/check-publish.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-sqlite": "^3.90.2",
+    "@payloadcms/next": "^3.90.2",
+    "@payloadcms/richtext-lexical": "^3.90.2",
+    "@payloadcms/translations": "^3.90.2",
+    "graphql": "^16.14.2",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^1.52.0",
+    "next": "^16.3.8",
+    "payload": "^3.90.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-markdown": "^10.1.0",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "sharp": "$sharp",
+    "undici": "^7.30.0",
+    "dompurify": "^3.4.16",
+    "esbuild": "^0.25.12",
+    "sass": "^1.105.1"
+  }
+}

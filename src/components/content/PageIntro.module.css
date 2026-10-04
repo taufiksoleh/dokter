@@ -1,0 +1,27 @@
+.intro {
+  padding-block: clamp(28px, 4vw, 48px) clamp(40px, 6vw, 72px);
+}
+
+.eyebrow {
+  margin-top: var(--space-6);
+}
+
+.title {
+  max-width: 18ch;
+  margin-top: var(--space-4);
+  font-size: var(--text-2xl);
+}
+
+.eyebrow + .title {
+  margin-top: var(--space-3);
+}
+
+.description {
+  margin-top: var(--space-5);
+}
+
+@media (min-width: 900px) {
+  .title {
+    font-size: clamp(2.875rem, 2rem + 2.4vw, 3.75rem);
+  }
+}
